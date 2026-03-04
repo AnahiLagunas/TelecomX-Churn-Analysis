@@ -1,64 +1,53 @@
-📊 Análisis de Evasión de Clientes (Churn) - Telecom X
+📊 Telecom X: Análisis de Evasión de Clientes (Churn)
+Este proyecto tiene como objetivo analizar el comportamiento de los clientes de la empresa Telecom X para identificar los factores que influyen en la cancelación de servicios (Churn). A través de un proceso de ETL (Extracción, Transformación y Carga), se procesaron datos de una API para generar visualizaciones estratégicas y recomendaciones de negocio.
 
-Este proyecto realiza un análisis integral de los datos de Telecom X para identificar patrones que influyen en la pérdida de clientes (Churn). Utiliza técnicas de ingeniería de datos para procesar información desde una API y análisis estadístico para generar recomendaciones estratégicas.
+🎯 Propósito del Análisis
+El análisis busca reducir la tasa de abandono de clientes mediante la identificación de perfiles de riesgo. Se centra en responder preguntas clave como:
 
-🚀 Estructura del Proyecto
+¿Qué tipos de contrato presentan mayor inestabilidad?
 
-El proyecto está desarrollado en un notebook de Google Colab y se divide en cuatro fases principales siguiendo el modelo ETL:
+¿Cómo influye la antigüedad del cliente en su lealtad?
 
-Extracción: Conexión con la API de Telecom X y carga de datos crudos.
+¿Existe una relación entre el número de servicios contratados y la permanencia?
 
-Transformación: Normalización de JSON anidado, limpieza de datos y creación de nuevas métricas.
+📂 Estructura del Proyecto
+El proyecto está organizado en un único notebook de Google Colab, dividido visualmente en las siguientes secciones según la metodología de ingeniería de datos:
 
-Carga y Análisis: Visualización de datos, matrices de correlación y detección de patrones de fuga.
+📌 Extracción: Conexión a la API y carga de datos JSON.
 
-Informe Final: Resumen de hallazgos y sugerencias de negocio.
+🛠️ Transformación: Normalización de datos anidados (aplanamiento de diccionarios), limpieza de inconsistencias y creación de la métrica cuentas_diarias.
 
-🛠️ Tecnologías Utilizadas
+📊 Carga y Análisis: Análisis descriptivo, visualización de variables categóricas y cálculo de matrices de correlación.
 
-Python 3.x
+📄 Informe Final: Resumen ejecutivo con conclusiones y estrategias sugeridas.
 
-Pandas: Manipulación y normalización de datos.
+📈 Insights y Gráficos Obtenidos
+1. El Factor del Contrato
+Se identificó que el tipo de contrato es el predictor más fuerte de fuga. Los clientes con contratos "Month-to-month" (mes a mes) tienen una probabilidad de cancelación significativamente superior a quienes tienen contratos anuales.
 
-Requests: Consumo de la API JSON.
+2. Análisis de Correlación
+Tras normalizar las columnas del dataset (identificando variables como monthly y tenure), la matriz de correlación reveló que:
 
-Matplotlib & Seaborn: Visualización de datos y mapas de calor (Heatmaps).
+Antigüedad (Tenure): Tiene una correlación negativa con la evasión; a mayor tiempo en la empresa, menor es el riesgo de churn.
 
-Google Colab: Entorno de desarrollo.
+Servicios Adicionales: Cuantos más servicios (seguridad, soporte, etc.) tiene un cliente, más "anclado" está a la empresa.
 
-📋 Requisitos e Instalación
+🚀 Instrucciones de Ejecución
+Para ejecutar este proyecto en tu entorno local o en la nube:
 
-Para ejecutar este proyecto localmente o en Colab, asegúrate de tener instaladas las siguientes librerías:
+Entorno: Se recomienda utilizar Google Colab para una configuración inmediata.
 
-Bash
-pip install pandas requests matplotlib seaborn
+Dependencias: Asegúrate de tener instaladas las librerías necesarias:
 
-⚙️ Pasos Clave del Desarrollo
+Python
+pip install pandas requests seaborn matplotlib
+Orden de ejecución:
 
-1. Normalización de Datos
-El dataset original presentaba estructuras anidadas (diccionarios dentro de columnas). Se utilizó pd.json_normalize para aplanar los datos y permitir el acceso a variables críticas como el tipo de contrato (contract) y los cargos mensuales (monthly).
+Ejecuta primero la celda de Extracción para obtener los datos de la API.
 
-2. Ingeniería de Variables
-Se creó la columna cuentas_diarias dividiendo el cargo mensual entre 30, lo que permite analizar el impacto del costo diario en la decisión de abandono del cliente.
+Importante: El código incluye una etapa de pd.json_normalize para manejar las columnas anidadas como customer, phone y account que de otro modo causarían errores en el análisis.
 
-3. Análisis de Correlación
-Se implementó una matriz de correlación para identificar qué factores tienen mayor relación con la evasión. Se descubrió una correlación negativa significativa entre la antigüedad (tenure) y el churn.
+Sigue el orden secuencial de las celdas para asegurar que las variables calculadas (como churn_binary) estén disponibles para los gráficos.
 
-📈 Hallazgos Principales
-
-El factor contrato: Los clientes con contratos mensuales ("Month-to-month") representan el segmento con mayor tasa de fuga.
-
-Fidelización por servicios: Existe una relación inversa entre la cantidad de servicios adicionales contratados (seguridad, soporte, etc.) y la probabilidad de churn.
-
-Sensibilidad al precio: Los clientes con cargos diarios más altos tienden a abandonar el servicio con mayor frecuencia si no tienen un contrato de largo plazo.
-
-💡 Recomendaciones Propuestas
-
-Migración Contractual: Incentivar el paso de contratos mensuales a anuales mediante descuentos estratégicos.
-
-Estrategia Multi-producto: Fomentar la adopción de servicios adicionales para aumentar el "costo de salida" del cliente.
-
-Monitoreo Temprano: Implementar alertas de retención para clientes con baja antigüedad (menor a 6 meses).
-
-Autor:  Anahi Leticia Lagunas Mercado 
-Proyecto: Challenge Data Science - LATAM / Telecom X
+Desarrollado como parte del Challenge Data Science - LATAM.
+Autor: Anahi L. Lagunas M.
