@@ -1,7 +1,9 @@
-📊 Telecom X: Análisis de Evasión de Clientes (Churn)
+#📊 Telecom X: Análisis de Evasión de Clientes (Churn)
+
 Este proyecto tiene como objetivo analizar el comportamiento de los clientes de la empresa Telecom X para identificar los factores que influyen en la cancelación de servicios (Churn). A través de un proceso de ETL (Extracción, Transformación y Carga), se procesaron datos de una API para generar visualizaciones estratégicas y recomendaciones de negocio.
 
-🎯 Propósito del Análisis
+##🎯 Propósito del Análisis
+
 El análisis busca reducir la tasa de abandono de clientes mediante la identificación de perfiles de riesgo. Se centra en responder preguntas clave como:
 
 ¿Qué tipos de contrato presentan mayor inestabilidad?
