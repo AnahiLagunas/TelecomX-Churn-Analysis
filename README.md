@@ -1,8 +1,8 @@
-#📊 Telecom X: Análisis de Evasión de Clientes (Churn)
+📊 Telecom X: Análisis de Evasión de Clientes (Churn)
 
 Este proyecto tiene como objetivo analizar el comportamiento de los clientes de la empresa Telecom X para identificar los factores que influyen en la cancelación de servicios (Churn). A través de un proceso de ETL (Extracción, Transformación y Carga), se procesaron datos de una API para generar visualizaciones estratégicas y recomendaciones de negocio.
 
-##🎯 Propósito del Análisis
+🎯 Propósito del Análisis
 
 El análisis busca reducir la tasa de abandono de clientes mediante la identificación de perfiles de riesgo. Se centra en responder preguntas clave como:
 
@@ -13,6 +13,7 @@ El análisis busca reducir la tasa de abandono de clientes mediante la identific
 ¿Existe una relación entre el número de servicios contratados y la permanencia?
 
 📂 Estructura del Proyecto
+
 El proyecto está organizado en un único notebook de Google Colab, dividido visualmente en las siguientes secciones según la metodología de ingeniería de datos:
 
 📌 Extracción: Conexión a la API y carga de datos JSON.
@@ -24,6 +25,7 @@ El proyecto está organizado en un único notebook de Google Colab, dividido vis
 📄 Informe Final: Resumen ejecutivo con conclusiones y estrategias sugeridas.
 
 📈 Insights y Gráficos Obtenidos
+
 1. El Factor del Contrato
 Se identificó que el tipo de contrato es el predictor más fuerte de fuga. Los clientes con contratos "Month-to-month" (mes a mes) tienen una probabilidad de cancelación significativamente superior a quienes tienen contratos anuales.
 
@@ -35,6 +37,7 @@ Antigüedad (Tenure): Tiene una correlación negativa con la evasión; a mayor t
 Servicios Adicionales: Cuantos más servicios (seguridad, soporte, etc.) tiene un cliente, más "anclado" está a la empresa.
 
 🚀 Instrucciones de Ejecución
+
 Para ejecutar este proyecto en tu entorno local o en la nube:
 
 Entorno: Se recomienda utilizar Google Colab para una configuración inmediata.
